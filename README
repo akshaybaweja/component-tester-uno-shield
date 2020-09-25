@@ -9,8 +9,6 @@
 
 ------------------------------------------------------------------------------
 
-Last edit:  2018-10-05
-
 Content
   - About
   - Safety Advice
@@ -86,7 +84,7 @@ Content
 * About
 
 The Component Tester is based on the project of Markus Frejek [1&2] and the
-successor of Karl-Heinz Kübbeler [3&4]. It's an alternative software for the
+successor of Karl-Heinz KÃ¼bbeler [3&4]. It's an alternative software for the
 current circuit by Karl-Heinz and offers some changes in the user interface
 and the methods used for probing and measuring. While Karl-Heinz provides an
 official release supporting also older ATmega MCUs, this is a playground
@@ -142,7 +140,7 @@ official release:
   + dedicated method for resistances <10 Ohms (instead of using ESR check)
 - capacitance measurement
   + starts at 5pF
-  + additional method for caps from 4.7µF up to 47µF
+  + additional method for caps from 4.7ÂµF up to 47ÂµF
   + correction/compensation method
 - no SamplingADC() for very low capacitance or inductance
 - diodes
@@ -639,7 +637,7 @@ conversion table:
   diode symbols       |>  <|
   capacitor symbol    ||
   omega               R
-  micro / µ           u
+  micro / Âµ           u
   resistor symbol     []
 
 Hints:
@@ -924,7 +922,7 @@ The usual format is:
 For a malformend packet the protocol and a "?" are shown.
 
 For a unknown protocol the tester displays the number of pauses and pulses,
-the duration of the first pulse and the first pause in units of 50µs:
+the duration of the first pulse and the first pause in units of 50Âµs:
   ? <pulses>:<first pulse>-<first pause>
 When the number of pulses stay the same for different buttons of the RC, the
 modulation is most likely PDM or PWM. A changing number of pulses indicates
@@ -948,7 +946,7 @@ Supported protocols:
 Optional protocols:
   - IR60 (SDA2008/MC14497)
   - Matsushita (Panasonic MN6014, C5D6 / 11 bits)
-  - NEC µPD1986C
+  - NEC ÂµPD1986C
   - RECS80 (standard & extended)
   - Sanyo (LC7461)
   - Thomson
@@ -1206,11 +1204,11 @@ adjustment (they will be not stored in the EEPROM, see "Save" below).
 
 The voltage offset of the analog comparator is automatically adjusted in the
 capacitance measurement (in normal probing mode, outside of the self
-adjustment) if the capacitor is in the range of 100nF up to 3.3µF. Also the
+adjustment) if the capacitor is in the range of 100nF up to 3.3ÂµF. Also the
 offset of the internal bandgap reference is determined in the same way.
 
 Before running the self-adjustment the first time, please measure a film
-capacitor with a value between 100nF and 3.3µF three times at least to let the
+capacitor with a value between 100nF and 3.3ÂµF three times at least to let the
 tester self-adjust the offsets mentioned above. Typically the first
 measurement will result in a slightly low value, the second in a high one
 and the third will be fine. That is caused by the self adjusting offsets.
@@ -1290,9 +1288,9 @@ resistance. In that case simply re-run the test.
 
 * Capacitors
 
-The measurement of capacitance is split into three methods. Large caps >47µF
+The measurement of capacitance is split into three methods. Large caps >47ÂµF
 are measured by the charging cycle method with 10ms pulses. Mid-sized
-caps between 4.7µF and 47µF are processed the same way but with 1ms charging
+caps between 4.7ÂµF and 47ÂµF are processed the same way but with 1ms charging
 pulses. And small caps are done by the analog comparator method. That
 way the accuracy of the measurement of caps is optimized.
 
@@ -1324,13 +1322,13 @@ based on the MCU clock rate. I'd guess Mr. Fourier is able to explain this.
 Alternatively you can also enable the old ESR measurement method.
 
 Another measurement taken is the self-discharge leakage current for
-capacitors larger than 4.7µF. It gives a hint about the state of an 
+capacitors larger than 4.7ÂµF. It gives a hint about the state of an 
 electrolytic cap. From my tests the typical value for a good electrolytic
 cap seems to be about:
-  - 10-220µF    1-3µA
-  - 330-470µF   4-5µA
-  - 470-820µF   4-7µA
-  - >1000µF     5-7µA per 1000µF
+  - 10-220ÂµF    1-3ÂµA
+  - 330-470ÂµF   4-5ÂµA
+  - 470-820ÂµF   4-7ÂµA
+  - >1000ÂµF     5-7ÂµA per 1000ÂµF
 
 
 * Inductors
@@ -1392,15 +1390,15 @@ BJT isn't measured with the same test current as for a power BJT.
 Some names and abbreviations are changed. The output for several parts might
 be splitted into multiple pages to support displays with just a few lines.
 
-For a single diode the low current Vf (measured with 10µA) is shown in braces
+For a single diode the low current Vf (measured with 10ÂµA) is shown in braces
 if the voltage is below 250mV. That should give you a hint for germanium
 diodes. Most datasheets of germanium diodes specify Vf at 0.1mA which the
 tester doesn't support. At a higher current Vf is expected to be around 0.7V
 which makes it hard to distinguish germanium from silicon diodes.
 
 The leakage current I_R for a single diode or I_CEO for a BJT will be
-displayed if it exeeds 50nA. Germanium BJTs have a leakage current of a few µA
-up to around 500µA. Germanium diodes are around a few µA usually.
+displayed if it exeeds 50nA. Germanium BJTs have a leakage current of a few ÂµA
+up to around 500ÂµA. Germanium diodes are around a few ÂµA usually.
 
 For some components the capacitance is shown also. In case the capacitance is
 below 5pF or the measurement failed for some reason the value displayed
@@ -1446,7 +1444,7 @@ The diode check identifies a CLD (Current Limiting Diode) as a standard diode
 and displays I_F as the leakage current. Note that anode and cathode of a CLD
 are reversed vs. a standard diode. A dedicated check for a CLD is hard to
 implement, since the leakage current of a Germanium or high-current Schottky
-diode is in the range of I_F (>= 33µA).
+diode is in the range of I_F (>= 33ÂµA).
 
 If a diode has an unusual forward voltage, a quite low V_f for the low current
 check (2nd value in braces) and no capacitance could be measured then it's
@@ -1467,7 +1465,7 @@ a V_BO of 20-200V.
   anti-parallel diodes. The capacitance measurement isn't able to determine  
   an acceptable value either.
 - When using a SMPS or DC-DC converter as power supply the tester will
-  sometimes detect a capacitor around 50µF even if no component is connected.
+  sometimes detect a capacitor around 50ÂµF even if no component is connected.
 - The ESR of a cap with a low capacitance may vary with the MCU clock.
 
 
@@ -1670,7 +1668,7 @@ Probing Commands:
   I_DSS
   - returns I_DSS value (drain-source current, zero bias / shorted gate)
   - applies to FET (depletion mode)
-  - example response: "6430µA"
+  - example response: "6430ÂµA"
 
   C_GE
   - returns C_GE value (gate-emitter capacitance)
@@ -1706,7 +1704,7 @@ Probing Commands:
     Online documentation of the Transistortester, Online Article, 2009-2011
 
 [4] http://www.mikrocontroller.net/articles/AVR_Transistortester
-    Short description of the TransistorTester, Karl-Heinz Kübbeler,
+    Short description of the TransistorTester, Karl-Heinz KÃ¼bbeler,
     Online Article, 2012
 
 
