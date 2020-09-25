@@ -1,0 +1,7 @@
+avrdude -c USBasp -B 5.0 -p m328p -P usb -U flash:w:./ComponentTester.hex:a -U eeprom:w:./ComponentTester.eep:a
+
+/Users/akshaybaweja/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/bin/avrdude -C/Users/akshaybaweja/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/etc/avrdude.conf -v -patmega328p -cusbasp -Pusb -B5.0 -Uflash:w:/Users/akshaybaweja/Desktop/Workspace/Component\ Tester/transistortester/Software/Markus/ComponentTester-1.34m/ComponentTester.hex:a -U eeprom:w:/Users/akshaybaweja/Desktop/Workspace/Component\ Tester/transistortester/Software/Markus/ComponentTester-1.34m/ComponentTester.eep:a
+
+avrdude -c USBasp -B 10.0 -p m328p -P usb -U lfuse:w:0xf7:m -U hfuse:w:0xd9:m -U efuse:w:0xfc:m
+
+/Users/akshaybaweja/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/bin/avrdude -C/Users/akshaybaweja/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/etc/avrdude.conf -v -patmega328p -cusbasp -Pusb -B10.0 -Ulfuse:w:0xf7:m -Uhfuse:w:0xd9:m -Uefuse:w:0xfc:m
